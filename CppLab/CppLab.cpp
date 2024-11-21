@@ -103,6 +103,8 @@ void lab2()
     cout << "----------------------\n";
 }
 
+//2.Написать функцию, которая возвращает минимальное из двух/трех целых чисел,
+//полученных в качестве аргумента (перегрузка)
 void lab3(int a1, int a2)
 {
     int minimum = min(a1, a2);
@@ -116,10 +118,56 @@ void lab3(int a1, int a2, int a3)
     cout << "Минимальное значение: " << minimum << "\n";
 }
 
+//Найти произведение всех элементов
 void lab4()
 {
+    int n;
+    float result = 1;
+    cout << "Введите количество элементов массива: ";
+    cin >> n;
+    auto num_array{new float[n]};
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Введите элемент массива № " << i + 1 << ": ";
+        cin >> num_array[i];
+        result *= num_array[i];
+    }
+    cout << "Массив: ";
+    for (int i = 0; i < n; i++)
+        cout << num_array[i] << " ";
+    cout << '\n';
+    cout << "Произведение всех элементов массива: " << result << '\n';
 }
 
+//Найти произведение элементов побочной диагонали
 void lab5()
 {
+    int w, h;
+    float result = 1;
+    cout << "Введите ширину матрицы: ";
+    cin >> w;
+    cout << "Введите высоту матрицы: ";
+    cin >> h;
+
+    auto matrix{new float*[h]};
+    for (int hp = 0; hp < h; hp++)
+        matrix[hp] = new float[w]{};
+
+    for (int hp = 0; hp < h; hp++)
+    {
+        for (int wp = 0; wp < w; wp++)
+            cin >> matrix[hp][wp];
+    }
+    cout << "Матрица: \n";
+    for (int hp = 0; hp < h; hp++)
+    {
+        for (int wp = 0; wp < w; wp++)
+            cout << matrix[hp][wp] << " ";
+        cout << '\n';
+    }
+    for (int hp = 0; hp < h; hp++)
+        if (w - hp - 1 >= 0)
+            result *= matrix[hp][w - hp - 1];
+
+    cout << "Произведение элементов побочной диагонали: " << result << '\n';
 }
