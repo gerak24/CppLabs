@@ -137,6 +137,7 @@ void lab4()
         cout << num_array[i] << " ";
     cout << '\n';
     cout << "Произведение всех элементов массива: " << result << '\n';
+    delete[]num_array;
 }
 
 //Найти произведение элементов побочной диагонали
@@ -170,4 +171,8 @@ void lab5()
             result *= matrix[hp][w - hp - 1];
 
     cout << "Произведение элементов побочной диагонали: " << result << '\n';
+
+    for (int hp = 0; hp < h; hp++)
+        delete[] matrix[hp];
+    delete[] matrix;
 }
