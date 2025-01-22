@@ -8,8 +8,8 @@ void lab1(), lab2(), lab3(int a1, int a2), lab3(int a1, int a2, int a3), lab4(),
 int main()
 {
     setlocale(LC_ALL, "Rus"); // NOLINT(cert-err33-c, concurrency-mt-unsafe)
-    cout << "Вы в меню лабораторных, для выбора лаборатоной введите числа 1-5:\n"
-        "Q - Для завержжения работы.\n";
+    cout << "Вы в меню лабораторных, для выбора лабораторной введите числа 1-5:\n"
+        "Q - Для завершения работы.\n";
     char entrypoint;
     cin >> entrypoint;
     while (entrypoint != 'Q')
@@ -56,7 +56,7 @@ int main()
         default:
             break;
         }
-        cout << "Для продолжения введите числа 1-5, введите Q - Для завержжения работы.\n";
+        cout << "Для продолжения введите числа 1-5, введите Q - Для завершения работы.\n";
         cin >> entrypoint;
     }
 }
